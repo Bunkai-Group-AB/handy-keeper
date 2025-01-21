@@ -1,11 +1,5 @@
-import handballIcon from './handball-icon.png'
-import lhkIcon from './lhk.png'
-import savehofIcon from './savehof.png'
-import shfBlue from './shf-blue.png'
+export { default as handballIcon } from './handball-icon.png'
+export { default as lhkIcon } from './lhk.png'
+export { default as savehofIcon } from './savehof.png'
+export { default as shfBlue } from './shf-blue.png'
 
-export default{
-  handballIcon,
-  lhkIcon,
-  savehofIcon,
-  shfBlue
-}

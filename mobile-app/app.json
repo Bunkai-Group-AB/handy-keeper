@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "handy-mobile-app",
-    "slug": "handy-mobile-app",
+    "name": "handy-keeper-app",
+    "slug": "handy-keeper-app",
+    "entrypoint": "./expo-router/entry",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./app/assets/icons/handball-icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,7 +14,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./app/assets/icons/handball-icon.png",
         "backgroundColor": "#ffffff"
       }
     },
