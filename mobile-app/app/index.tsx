@@ -1,4 +1,4 @@
-import LandingPage from './components/Landingpage'
+import LandingPage from './views/LandingPage'
 
 export default function Index() {
   return <LandingPage />

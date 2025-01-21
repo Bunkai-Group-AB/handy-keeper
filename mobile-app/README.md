@@ -1,4 +1,4 @@
-#  Handball statistic app
+###  Handball statistic app
    
 - mobile-app
 - built using expo 

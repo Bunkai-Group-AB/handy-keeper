@@ -1,32 +1,44 @@
+import { Ionicons } from '@expo/vector-icons'
+import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+
+
+
 
 type MenuButtonProps = {
   text: string
-  textStyle?: StyleSheet
+  buttonColor: string
+  iconName: string
 }
 
-export default function MenuButton(props: MenuButtonProps) {
-  return (
-    <TouchableOpacity style={styles.buttonContainer}>
-      <Text style={styles.text}>{props.text}</Text>
-    </TouchableOpacity>
-  )
-}
+const MenuButton: React.FC<MenuButtonProps> = ({text,buttonColor,iconName}) => 
+    <>
+      <TouchableOpacity style={[styles.buttonContainer, { backgroundColor: buttonColor }]}>
+        <Ionicons name={iconName as any} size={24} color="white"/>
+        <Text style={styles.text}>{text}</Text>
+      </TouchableOpacity>
+    </>
+  
+
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 30,
+    fontSize: 20,
+    fontFamily: 'roboto',
     padding: 20,
     color: '#ececec',
   },
 
-  buttonContainer: {
+  buttonContainer: { 
+    width: 170,
+    height: 180,  
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#143a84',
-    borderRadius: 5,
-    marginHorizontal: 10,
-    margin: 10,
-    padding: 15,
-    color: 'red',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#ececec',
+    marginHorizontal: 5,
   },
 })
+
+export { MenuButton }
