@@ -1,4 +1,5 @@
 export { Box } from './Box'
 export { Headline } from './Headline'
 export { MenuButton } from './MenuButton'
+export { Spacer } from './Spacer'
 export { Text } from './Text'

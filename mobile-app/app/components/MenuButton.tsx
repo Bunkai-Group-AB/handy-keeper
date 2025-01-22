@@ -23,8 +23,6 @@ const MenuButton = ({ text, iconName, disabled, onPress }: Props) => {
       style={{
         justifyContent: 'center',
         alignItems: 'center',
-        //todo: moev margin to parent component
-        marginHorizontal: theme.spacing.s,
       }}
     >
       <Box

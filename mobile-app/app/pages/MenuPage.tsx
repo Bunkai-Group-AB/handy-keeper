@@ -1,6 +1,6 @@
 import { useTheme } from '@shopify/restyle'
 import { StyleSheet, View } from 'react-native'
-import { MenuButton, Text } from '../components'
+import { Box, MenuButton, Spacer, Text } from '../components'
 import { Theme } from '../theme'
 // todo fix later
 
@@ -8,27 +8,23 @@ const MenuPage = () => {
   const theme = useTheme<Theme>()
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: theme.colors.backgroundDark,
-        }}
+      <Box
+        flex={1}
+        justifyContent={'center'}
+        alignItems={'center'}
+        backgroundColor={'backgroundDark'}
       >
         <Text
           variant="banner"
           style={{
-            height: 200,
-            paddingTop: 100,
             textAlign: 'center',
             lineHeight: 50,
             flexWrap: 'wrap',
           }}
         >
-          MÅLVAKTS KOLLEN
+          MÅLVAKTS HJÄLPEN
         </Text>
-      </View>
+      </Box>
       <View
         style={[
           styles.buttonContainer,
@@ -41,12 +37,15 @@ const MenuPage = () => {
             onPress={onPressPlay}
             iconName="football-outline"
           />
+          <Spacer isHorizontal size="m" color="backgroundDark" />
+
           <MenuButton
             text="Konfigurera lag"
             onPress={onPressSettings}
             iconName="cog-outline"
           />
         </View>
+        <Spacer size="l" color="backgroundDark" />
         <View style={styles.row}>
           <MenuButton
             disabled
@@ -54,6 +53,7 @@ const MenuPage = () => {
             onPress={onPressStats}
             iconName="stats-chart-outline"
           />
+          <Spacer isHorizontal size="m" color="backgroundDark" />
           <MenuButton
             disabled
             text="Analys"
@@ -90,14 +90,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   buttonContainer: {
+    backgroundColor: 'white',
     flex: 1.5,
-    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
 
   row: {
-    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
   },
 })

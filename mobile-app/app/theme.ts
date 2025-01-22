@@ -30,10 +30,11 @@ const theme = createTheme({
     textDisabled: palette.grey,
   },
   spacing: {
-    s: 8,
-    m: 16,
-    l: 24,
+    s: 16,
+    m: 24,
+    l: 32,
     xl: 40,
+    xxl: 48,
   },
   breakpoints: {
     phone: 0,
