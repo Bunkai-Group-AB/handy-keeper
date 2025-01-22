@@ -1,79 +1,51 @@
 import { Ionicons } from '@expo/vector-icons'
-import {
-  backgroundColor,
-  BackgroundColorProps,
-  border,
-  BorderProps,
-  composeRestyleFunctions,
-  spacing,
-  SpacingProps,
-  useTheme,
-} from '@shopify/restyle'
+import { useTheme } from '@shopify/restyle'
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
-import { Theme } from '../theme'
+import { TouchableOpacity } from 'react-native'
+import { Box } from './Box'
+import { Text } from './Text'
 
-type RestyleProps = SpacingProps<Theme> &
-  BorderProps<Theme> &
-  BackgroundColorProps<Theme>
-
-const restyleFunctions = composeRestyleFunctions<Theme, RestyleProps>([
-  spacing,
-  border,
-  backgroundColor,
-])
-
-type MenuButtonProps = {
-  text: string
-  buttonColor: string
+type Props = {
   onPress: () => void
   iconName: keyof typeof Ionicons.glyphMap
   disabled?: boolean
+  text: string
 }
 
-const MenuButton: React.FC<MenuButtonProps> = ({
-  text,
-  buttonColor,
-  iconName,
-  disabled,
-  onPress,
-}) => {
-  const theme = useTheme<Theme>()
-  const backgroundColor = disabled
-    ? theme.colors.buttonDisabled
-    : theme.colors.buttonPrimary
+const MenuButton = ({ text, iconName, disabled, onPress }: Props) => {
+  const theme = useTheme()
+  const buttonVariants = theme.buttonVariants.menuButton.default
 
   return (
     <TouchableOpacity
       onPress={onPress}
       disabled={!!disabled}
-      style={[styles.buttonContainer, { backgroundColor: backgroundColor }]}
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        //todo: moev margin to parent component
+        marginHorizontal: theme.spacing.s,
+      }}
     >
-      <Ionicons name={iconName as any} size={53} color="white" />
-      <Text style={styles.text}>{text}</Text>
+      <Box
+        backgroundColor={disabled ? 'buttonDisabled' : 'buttonPrimary'}
+        width={buttonVariants.width}
+        height={buttonVariants.height}
+        borderRadius={'xl'}
+        justifyContent={'center'}
+        alignItems={'center'}
+      >
+        <Ionicons
+          name={iconName as any}
+          size={70}
+          color={!disabled ? 'white' : 'lightgrey'}
+        />
+        <Text variant={!disabled ? 'buttonLabel' : 'buttonLabelDisabled'}>
+          {text}
+        </Text>
+      </Box>
     </TouchableOpacity>
   )
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 20,
-    fontFamily: 'roboto',
-    paddingTop: 20,
-    color: '#ececec',
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
-
-  buttonContainer: {
-    width: 170,
-    height: 180,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    borderWidth: 1,
-    marginHorizontal: 5,
-  },
-})
 
 export { MenuButton }

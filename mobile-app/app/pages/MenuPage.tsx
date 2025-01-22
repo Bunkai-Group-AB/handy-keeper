@@ -10,7 +10,7 @@ const MenuPage = () => {
     <View style={styles.container}>
       <View
         style={{
-          flex: 0.5,
+          flex: 1,
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: theme.colors.backgroundDark,
@@ -22,6 +22,7 @@ const MenuPage = () => {
             height: 200,
             paddingTop: 100,
             textAlign: 'center',
+            lineHeight: 50,
             flexWrap: 'wrap',
           }}
         >
@@ -30,7 +31,7 @@ const MenuPage = () => {
       </View>
       <View
         style={[
-          styles.containerButton,
+          styles.buttonContainer,
           { backgroundColor: theme.colors.backgroundDark },
         ]}
       >
@@ -38,13 +39,11 @@ const MenuPage = () => {
           <MenuButton
             text="Spela"
             onPress={onPressPlay}
-            buttonColor={theme.colors.buttonPrimary}
             iconName="football-outline"
           />
           <MenuButton
             text="Konfigurera lag"
             onPress={onPressSettings}
-            buttonColor={theme.colors.buttonDisabled}
             iconName="cog-outline"
           />
         </View>
@@ -53,14 +52,12 @@ const MenuPage = () => {
             disabled
             text="Statistik"
             onPress={onPressStats}
-            buttonColor={theme.colors.buttonPrimary}
             iconName="stats-chart-outline"
           />
           <MenuButton
             disabled
             text="Analys"
             onPress={onPressAnalysis}
-            buttonColor={theme.colors.buttonPrimary}
             iconName="pulse-outline"
           />
         </View>
@@ -92,36 +89,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
-  containerButton: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginVertical: 10,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-  icon: {
-    width: 10,
-    height: 10,
-    marginRight: 10,
-  },
   buttonContainer: {
+    flex: 1.5,
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    backgroundColor: '#143a84',
-    borderRadius: 5,
-    marginHorizontal: 10,
-    margin: 10,
-    padding: 15,
-    color: 'red',
+  },
+
+  row: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
   },
 })
