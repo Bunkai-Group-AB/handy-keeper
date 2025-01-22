@@ -28,7 +28,6 @@ Before you begin, ensure you have met the following requirements:
    ```bash
     npx expo start
    ```
-
    Follow the promts in the terminal and run the project.
 
 ### Building the project
@@ -52,3 +51,15 @@ For more information on how to create and use these builds, refer to the Expo do
 - [Development Builds](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Production Builds](https://docs.expo.dev/distribution/building-standalone-apps/)
 - [Custom Builds](https://docs.expo.dev/development/customizing/)
+
+
+### Design system
+Our design system utilizes [Shopify Restyle](https://github.com/Shopify/restyle), a library that provides a type-enforced system for building UI components in React Native. Restyle allows us to create consistent and reusable styles across the application, ensuring a cohesive look and feel.
+
+### Key Features of Shopify Restyle
+
+- **Type Safety**: Ensures that styles are applied correctly and consistently.
+- **Themeable**: Easily switch between different themes or customize the existing theme.
+- **Composable**: Build complex UI components by composing simple, reusable style functions.
+
+By leveraging Shopify Restyle, we ensure that our design system is robust, scalable, and easy to maintain.

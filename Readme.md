@@ -9,6 +9,7 @@ HandyKeeper is an application designed to assist handball goalkeepers in trackin
 - User-friendly interface for easy data entry and analysis
 
 ## Services
+Navigate to the directory for more information
 - [mobile-app](./mobile-app) 
 - [backend](./backend/)
 
