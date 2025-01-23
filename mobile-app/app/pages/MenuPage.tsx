@@ -24,6 +24,10 @@ const MenuPage = () => {
         >
           MÅLVAKTS HJÄLPEN
         </Text>
+        <Spacer size="xl" color="backgroundDark" />
+        <Box width="100%" justifyContent="center" alignItems="center">
+          <Text variant={'caption'}>Namn Namnsson</Text>
+        </Box>
       </Box>
       <View
         style={[

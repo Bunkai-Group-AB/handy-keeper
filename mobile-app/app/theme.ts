@@ -97,8 +97,8 @@ const theme = createTheme({
     },
     caption: {
       fontFamily: 'Roboto-Light',
-      fontSize: 12,
-      lineHeight: 16,
+      fontSize: 32,
+      lineHeight: 40,
       color: 'text',
     },
     buttonLabel: {
