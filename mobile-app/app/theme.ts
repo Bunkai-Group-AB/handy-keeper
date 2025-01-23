@@ -35,6 +35,7 @@ const theme = createTheme({
     debug: 'red',
   },
   spacing: {
+    xs: 8,
     s: 16,
     m: 24,
     l: 32,
@@ -109,9 +110,9 @@ const theme = createTheme({
       color: 'text',
     },
     buttonLabel: {
-      fontFamily: 'Roboto-Bold',
-      fontSize: 21,
-      lineHeight: 24,
+      fontFamily: 'Arial',
+      fontSize: 30,
+      lineHeight: 30,
       color: 'text',
     },
     // todo figure out at better way to handle thiss

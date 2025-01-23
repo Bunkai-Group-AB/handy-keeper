@@ -1,6 +1,8 @@
 import { useTheme } from '@shopify/restyle'
 import React from 'react'
-import { Box } from './restyle'
+import { Image, TouchableOpacity } from 'react-native'
+import { Box, Text } from './restyle'
+import { Spacer } from './Spacer'
 
 type Props = {
   imgSrc: string
@@ -18,8 +20,27 @@ const Card = ({ imgSrc, label, onPress }: Props) => {
       width={buttonVariants.width}
       borderRadius={'xl'}
       backgroundColor={'buttonPrimary'}
-    ></Box>
+    >
+      <TouchableOpacity
+        onPress={() => console.log('im pressed')}
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+      >
+        <Box flex={1} alignItems={'center'} justifyContent={'center'}>
+          <Text variant={'buttonLabel'}>{label}</Text>
+        </Box>
+        <Box flex={2} alignItems={'center'} justifyContent={'center'}>
+          <Image
+            source={{ uri: imgSrc }}
+            style={{ width: '100%', height: '100%', resizeMode: 'contain' }}
+          />
+        </Box>
+        <Spacer size="l"></Spacer>
+      </TouchableOpacity>
+    </Box>
   )
 }
 
-export default Card
+export { Card }
