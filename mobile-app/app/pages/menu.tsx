@@ -1,59 +1,44 @@
-import { useTheme } from '@shopify/restyle'
-import { StyleSheet } from 'react-native'
+import { useRouter } from 'expo-router'
 import { Box, MenuButton, Spacer, Text } from '../components'
-import { Theme } from '../theme'
+
 // todo fix later
 
 const MenuScreen = () => {
-  const theme = useTheme<Theme>()
+  const router = useRouter()
 
   return (
-    <Box flex={1}>
-      <Box
-        flex={1}
-        justifyContent={'center'}
-        alignItems={'center'}
-        backgroundColor={'backgroundDark'}
-      >
-        <Text
-          variant="banner"
-          style={{
-            textAlign: 'center',
-            lineHeight: 50,
-            flexWrap: 'wrap',
-          }}
-        >
-          MÅLVAKTS HJÄLPEN
-        </Text>
+    <Box flex={1} backgroundColor={'backgroundDark'}>
+      <Box flex={1} justifyContent={'center'} alignItems={'center'}>
+        <Text variant="banner">MÅLVAKTS HJÄLPEN</Text>
         <Spacer size="xl" color="backgroundDark" />
         <Box width="100%" justifyContent="center" alignItems="center">
           <Text variant={'caption'}>Namn namnsson</Text>
         </Box>
       </Box>
-      <Box flex={1.5} alignItems="center" backgroundColor={'backgroundDark'}>
+      <Box flex={1.5} alignItems="center">
         <Box flexDirection={'row'}>
           <MenuButton
             text="Spela"
-            onPress={onPressPlay}
+            onPress={() => onPressPlay()}
             iconName="football-outline"
           />
-          <Spacer isHorizontal size="m" color="backgroundDark" />
+          <Spacer isHorizontal size="m" />
 
           <MenuButton
             text="Konfigurera lag"
-            onPress={onPressSettings}
+            onPress={() => router.push('./pages/configure')}
             iconName="cog-outline"
           />
         </Box>
-        <Spacer size="l" color="backgroundDark" />
+        <Spacer size="l" />
         <Box flexDirection={'row'}>
           <MenuButton
             disabled
             text="Statistik"
-            onPress={onPressStats}
+            onPress={() => console.log('pressed')}
             iconName="stats-chart-outline"
           />
-          <Spacer isHorizontal size="m" color="backgroundDark" />
+          <Spacer isHorizontal size="m" />
           <MenuButton
             disabled
             text="Analys"
@@ -84,9 +69,3 @@ const onPressAnalysis = () => {
 }
 
 export default MenuScreen
-
-const styles = StyleSheet.create({
-  row: {
-    flexDirection: 'row',
-  },
-})

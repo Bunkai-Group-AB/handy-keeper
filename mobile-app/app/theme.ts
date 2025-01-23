@@ -4,7 +4,8 @@ const palette = {
   backgroundDarkBlue: '#000B21',
   backgroundLightBlue: '#014880',
 
-  bluePrimary: '#203a72',
+  bluePrimaryDark: '#014880',
+  bluePrimary: '#0065ab',
   bluePrimaryLight: '#6b7f99',
 
   yellowPrimary: '#ffDD05',
@@ -22,12 +23,16 @@ const theme = createTheme({
     banner: palette.bluePrimary,
     backgroundDark: palette.backgroundDarkBlue,
     backgroundLight: palette.backgroundLightBlue,
+
+    buttonPrimaryDark: palette.bluePrimaryDark,
     buttonPrimary: palette.bluePrimary,
     buttonDisabled: palette.bluePrimaryLight,
+
     success: palette.greenPrimary,
     highlight: palette.yellowPrimary,
     text: palette.white,
     textDisabled: palette.grey,
+    debug: 'red',
   },
   spacing: {
     s: 16,
@@ -74,8 +79,10 @@ const theme = createTheme({
     banner: {
       fontFamily: 'Arial',
       fontSize: 55,
-      lineHeight: 40,
+      lineHeight: 60,
       color: 'text',
+      textAlign: 'center',
+      flexWrap: 'wrap',
     },
     header: {
       fontFamily: 'Roboto-Bold',
