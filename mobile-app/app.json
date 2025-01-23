@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "handy-keeper-app",
+    "name": "Handy keeper",
     "slug": "handy-keeper-app",
     "entrypoint": "./expo-router/entry",
     "version": "1.0.0",
