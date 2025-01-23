@@ -1,13 +1,14 @@
 import { useTheme } from '@shopify/restyle'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Box, MenuButton, Spacer, Text } from '../components'
 import { Theme } from '../theme'
 // todo fix later
 
-const MenuPage = () => {
+const MenuScreen = () => {
   const theme = useTheme<Theme>()
+
   return (
-    <View style={styles.container}>
+    <Box flex={1}>
       <Box
         flex={1}
         justifyContent={'center'}
@@ -26,16 +27,11 @@ const MenuPage = () => {
         </Text>
         <Spacer size="xl" color="backgroundDark" />
         <Box width="100%" justifyContent="center" alignItems="center">
-          <Text variant={'caption'}>Namn Namnsson</Text>
+          <Text variant={'caption'}>Namn namnsson</Text>
         </Box>
       </Box>
-      <View
-        style={[
-          styles.buttonContainer,
-          { backgroundColor: theme.colors.backgroundDark },
-        ]}
-      >
-        <View style={styles.row}>
+      <Box flex={1.5} alignItems="center" backgroundColor={'backgroundDark'}>
+        <Box flexDirection={'row'}>
           <MenuButton
             text="Spela"
             onPress={onPressPlay}
@@ -48,9 +44,9 @@ const MenuPage = () => {
             onPress={onPressSettings}
             iconName="cog-outline"
           />
-        </View>
+        </Box>
         <Spacer size="l" color="backgroundDark" />
-        <View style={styles.row}>
+        <Box flexDirection={'row'}>
           <MenuButton
             disabled
             text="Statistik"
@@ -64,9 +60,9 @@ const MenuPage = () => {
             onPress={onPressAnalysis}
             iconName="pulse-outline"
           />
-        </View>
-      </View>
-    </View>
+        </Box>
+      </Box>
+    </Box>
   )
 }
 
@@ -87,18 +83,9 @@ const onPressAnalysis = () => {
   return
 }
 
-export default MenuPage
+export default MenuScreen
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  buttonContainer: {
-    backgroundColor: 'white',
-    flex: 1.5,
-    alignItems: 'center',
-  },
-
   row: {
     flexDirection: 'row',
   },
