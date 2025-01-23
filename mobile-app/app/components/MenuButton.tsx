@@ -2,8 +2,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { useTheme } from '@shopify/restyle'
 import React from 'react'
 import { TouchableOpacity } from 'react-native'
-import { Box } from './Box'
-import { Text } from './Text'
+import { Box, Text } from './restyle'
 
 type Props = {
   onPress: () => void

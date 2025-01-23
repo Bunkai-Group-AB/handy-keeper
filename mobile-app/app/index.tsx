@@ -1,10 +1,10 @@
-import { ThemeProvider } from '@shopify/restyle';
-import MenuPage from './pages/MenuPage';
-import theme from './theme';
+import { ThemeProvider } from '@shopify/restyle'
+import MenuPage from './pages/MenuPage'
+import theme from './theme'
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <MenuPage/>
+    <MenuPage />
   </ThemeProvider>
 )
 export default App
